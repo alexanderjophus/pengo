@@ -1,0 +1,17 @@
+plugins:
+  - portscanner
+  - databasescanner
+
+portscanner:
+  target: scanme.nmap.org
+  portrange: 1-1024
+
+databasescanner:
+  dbtype: mysql
+  mysql:
+    uri: root:my-secret-pw@tcp(127.0.0.1:64399)/
+  search:
+    - password
+    - secret
+    - token
+    - key
